@@ -1,0 +1,15 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "placeholders";
+
+* {
+  box-sizing: border-box;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  @media screen and ($desktop) {
+    max-width: 1352px;
+  }
+}

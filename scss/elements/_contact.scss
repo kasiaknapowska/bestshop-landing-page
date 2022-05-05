@@ -1,0 +1,63 @@
+.contact {
+  padding-top: 6rem;
+  width: 90%;
+  margin: 0 auto;
+  @media screen and ($tablet) {
+    max-width: 900px;
+    display: flex;
+  }
+  @media screen and ($desktop-s) {
+    padding-top: 8rem;
+  }
+  h2 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+  &-details {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 0;
+    a {
+      @include webfont($opensans, 1rem, 600, $color-grey) {
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+      }
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+    @media screen and ($desktop-s) {
+      flex-direction: row;
+    }
+  }
+  div,
+  form {
+    width: 100%;
+    position: relative;
+    label[for="name"],
+    label[for="email"] {
+      @include webfont($opensans, 0.8rem, 800, $color-primary-blue) {
+        text-transform: uppercase;
+        letter-spacing: 3.28px;
+      }
+    }
+    input:not(.checkbox) {
+      border: 0;
+      border-bottom: 1px solid $color-grey;
+      height: 3rem;
+      margin-bottom: 1rem;
+      &:focus {
+        border-bottom: 2px solid $color-primary-blue;
+      }
+    }
+  }
+  .inputs-container {
+    display: flex;
+    flex-direction: column;
+   .checkbox {
+     @extend %checkbox;
+   }
+  }
+}

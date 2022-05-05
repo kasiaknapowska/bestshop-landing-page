@@ -1,0 +1,14 @@
+h1 {
+    @include webfont($raleway, 3rem, $basic-font-weight, black);
+  }
+  h2 {
+    @include webfont($raleway, 2.25rem, $basic-font-weight, black) {
+      line-height: 2.5rem;
+    }
+  }
+  p {
+    @include webfont($opensans, 1rem, $basic-font-weight, black) {
+      line-height: 1.5rem;
+    }
+  }
+  

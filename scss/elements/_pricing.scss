@@ -1,0 +1,102 @@
+.pricing {
+  text-align: center;
+  padding-top: 6rem;
+  &-container {
+    width: 85%;
+    max-width: 25rem;
+    margin: 0 auto;
+    div {
+      position: relative;
+      text-align: center;
+    }
+    @media screen and ($desktop-s) {
+      max-width: 1352px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      div {
+        min-width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    .pricing-box {
+      @extend %pricing-box;
+      h3 {
+        @include webfont($raleway, 1.2rem, 800, black);
+      }
+      strong {
+        display: block;
+        @include webfont($opensans, 3rem, 300, black) {
+          margin: 1rem 0;
+        }
+      }
+      span {
+        @include webfont($raleway, 0.8rem, 700, black) {
+          margin-bottom: 2rem;
+        }
+      }
+      li {
+        @include webfont($opensans, 1rem, $basic-font-weight, black) {
+          margin: 1.5rem;
+        }
+        text-align: left;
+        padding-left: 2rem;
+        @media screen and ($desktop-s) {
+          text-align: center;
+          padding-left: 0;
+        }
+        i.fas {
+          font-size: 0.5rem;
+          border-radius: 2px;
+        }
+        .fa-check {
+          color: $color-green;
+          border: 1px solid $color-green;
+          margin-right: 0.8rem;
+          padding: 3px 3px;
+        }
+        .fa-times {
+          color: $color-redish;
+          border: 1px solid $color-redish;
+          margin-right: 0.8rem;
+          padding: 3px 4px;
+        }
+      }
+      &.basic {
+        border: 1px solid $color-redish;
+      }
+      &.professional {
+        border: 1px solid $color-primary-blue;
+        box-shadow: 5px 10px 27px $color-primary-blue-shadow;
+        transform: scale(110%);
+      }
+      &.premium {
+        border: 1px solid $color-green;
+      }
+      strong {
+        &.price-basic {
+          color: $color-redish;
+          @media screen and ($desktop-s) {
+            margin-bottom: 3.8rem; //dodaję 2.8rem (span limited font-size i margin-bottom)
+          }
+        }
+        &.price-professional {
+          color: $color-primary-blue;
+        }
+        &.price-premium {
+          color: $color-green;
+        }
+      }
+    }
+    .pricing-btn {
+      position: absolute;
+      bottom: -1.3rem;
+      left: calc(50% - 4.6rem);
+    }
+    .btn-blue {
+      bottom: -2.7rem;
+    }
+  }
+}

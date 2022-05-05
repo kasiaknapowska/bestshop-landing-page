@@ -1,0 +1,157 @@
+%box {
+  background-color: white;
+  border-radius: 0.3rem;
+  border: 1px solid $color-grey-border;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media screen and ($desktop-s) {
+    height: 24rem;
+  }
+}
+.benefits {
+  width: 100%;
+  background-color: $color-light-grey;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  .boxes-container {
+    max-width: 1124px;
+    .box {
+      @extend %box;
+      padding: 3rem 2rem;
+      margin-bottom: 4rem;
+      &-info p {
+        margin: 2rem auto;
+        @media screen and ($desktop-s) {
+          max-width: 90%;
+          margin-left: 0;
+          position: relative;
+          &::after {
+            content: "";
+            height: 4px;
+            width: 15rem;
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+          }
+        }
+      }
+      .macbook {
+        position: relative;
+        img {
+          width: 90%;
+          margin-bottom: 2rem;
+          position: relative;
+          @media screen and ($desktop-s) {
+            width: auto;
+            margin-bottom: 0;
+          }
+        }
+        &::before {
+          content: "";
+          height: 10rem;
+          width: 10rem;
+          background-color: $color-redish;
+          border-radius: 2.5rem;
+          transform: rotate(45deg);
+          position: absolute;
+          top: -1rem;
+          right: 1rem;
+        }
+      }
+      .iphone {
+        position: relative;
+        img {
+          margin-bottom: 2rem;
+          position: relative;
+          padding-left: 1.5rem;
+          width: 100%;
+          @media screen and ($mobile) {
+            width: auto;
+          }
+          @media screen and ($tablet) {
+            margin-bottom: 0;
+            padding-left: 5;
+          }
+        }
+        &::before {
+          content: "";
+          height: 14rem;
+          width: 14rem;
+          background-color: $color-primary-blue;
+          border-radius: 50%;
+          position: absolute;
+          top: -1rem;
+          @media screen and (min-width: 550px) {
+            width: 17rem;
+            height: 17rem;
+            left: 2rem;
+          }
+          @media screen and ($tablet) {
+            width: 20rem;
+            height: 20rem;
+            left: 0;
+          }
+        }
+      }
+    }
+    &:nth-child(1) .box {
+      @media screen and ($desktop-s) {
+        flex-direction: row-reverse;
+        &-info p::after {
+          background-color: $color-redish;
+        }
+      }
+    }
+    &:nth-child(2) .box {
+      @media screen and ($desktop-s) {
+        flex-direction: row;
+        &-info p::after {
+          background-color: $color-primary-blue;
+        }
+      }
+    }
+  }
+  .box-trumpet {
+    @extend %box;
+    h2 {
+      padding: 3rem 2rem 0 2rem;
+    }
+    p {
+      padding: 0 2rem;
+    }
+    .trumpet {
+      background-color: $color-green;
+      border-radius: 0.3rem;
+      padding-top: 3rem;
+      width: 100%;
+      text-align: center;
+      @media screen and ($desktop-s) {
+        padding-top: 0;
+        height: 24rem;
+        width: 80%;
+        margin-left: 2rem;
+        img {
+          padding-top: 7rem;
+        }
+      }
+    }
+    @media screen and ($desktop-s) {
+      flex-direction: row;
+      background-color: $color-light-grey;
+      border: none;
+      &-info {
+        background-color: white;
+        border-radius: 0.3rem;
+        border: 1px solid $color-grey-border;
+        height: 24rem;
+        padding-top: 2rem;
+        p::after {
+          background-color: $color-green;
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+}

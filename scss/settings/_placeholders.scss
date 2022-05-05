@@ -1,0 +1,42 @@
+%pricing-box {
+    width: 100%;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+%checkbox {
+    @include webfont($opensans, 0.8rem, $basic-font-weight, $color-grey) {
+      cursor: pointer;
+      display: flex;
+      line-height: 17px;
+      margin-bottom: 20px;
+    }
+    input {
+      cursor: pointer;
+      position: absolute;
+      opacity: 0;
+      height: 0;
+      width: 0;
+      &:checked + span {
+        background-image: url("../images/Checkmark.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+
+      }
+    }
+    span {
+      cursor: pointer;
+      height: 1.5rem;
+      flex-basis: 1.5rem;
+      flex-shrink: 0;
+      border: 1px solid $color-grey;
+      border-radius: .25rem;
+      margin-right: 0.5rem;
+      background-color: white;
+    }
+  }

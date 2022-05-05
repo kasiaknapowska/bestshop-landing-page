@@ -1,0 +1,122 @@
+%nav {
+  @include webfont($opensans, 0.7rem, $basic-font-weight, $color-grey) {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+}
+header {
+  height: 4.5rem;
+  width: 100%;
+  padding: 1.3rem 0;
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  position: fixed;
+  z-index: 1;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      @include webfont($raleway, 2rem, 300, $color-primary-blue) {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+nav {
+  .menu-toggle {
+    @media screen and ($tablet) {
+      display: none;
+    }
+    opacity: 0;
+    &:checked ~ .menu-btn > span {
+      transform: rotate(45deg);
+      &::before {
+        top: 0;
+        transform: rotate(0);
+      }
+      &::after {
+        top: 0;
+        transform: rotate(90deg);
+      }
+    }
+    &:checked ~ ul {
+      visibility: visible;
+      left: 0;
+    }
+  }
+  .menu-btn {
+    @media screen and ($tablet) {
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    position: fixed;
+    margin: auto 0;
+    top: 22px;
+    right: 20px;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    z-index: 1;
+    > span,
+    > span::before,
+    > span::after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 0.2rem;
+      background-color: $color-primary-blue;
+      transition-duration: 0.25s;
+    }
+    > span::before {
+      content: "";
+      top: -0.5rem;
+    }
+    > span::after {
+      content: "";
+      top: 0.5rem;
+    }
+  }
+  ul {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    top: 4.5rem;
+    width: 100%;
+    padding: 3rem 2rem;
+    background-color: white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    @media screen and ($tablet) {
+      display: flex;
+      background: none;
+      box-shadow: none;
+      position: static;
+      visibility: visible;
+      padding: 0;
+    }
+
+    li > a {
+      @extend %nav;
+      display: inline-block;
+      margin: 0.7rem 0;
+      @media screen and ($tablet) {
+        display: inline;
+        margin: 0;
+        margin-left: 5rem;
+        padding: 1.5rem 0;
+
+        &:hover {
+          cursor: pointer;
+          color: black;
+          border-bottom: 0.25rem solid $color-primary-blue;
+        }
+      }
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}

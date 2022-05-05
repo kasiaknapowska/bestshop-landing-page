@@ -1,0 +1,21 @@
+@use "sass:list";
+
+$opensans: "Open Sans", sans-serif;
+$raleway: "Raleway", sans-serif;
+$basic-font-weight: 400;
+
+$color-primary-blue: rgba(7, 172, 230, 1);
+$color-primary-blue-shadow: rgba(7, 172, 230, 0.16);
+$color-redish: rgba(251, 59, 100, 1);
+$color-green: rgba(85, 223, 180, 1);
+$color-grey: #a5a5a5;
+$color-light-grey: #f7f7f7;
+$color-grey-border: #e8e9ed;
+
+$mobile: "min-width: 600px";
+$tablet: "min-width: 800px";
+$desktop-s: "min-width: 1000px";
+$desktop: "min-width: 1352px";
+
+$colors-list: $color-redish, $color-primary-blue, $color-green;
+

@@ -1,0 +1,61 @@
+@use "sass:list";
+.statistics {
+  margin: 5rem auto;
+  padding: 0 5rem;
+  text-align: center;
+  &-container {
+    margin: 0 auto;
+    @media screen and ($tablet) {
+      width: 85%;
+      display: flex;
+      justify-content: space-between;
+    }
+    @media screen and (min-width: 1000px) {
+      width: 65%;
+    }
+    @media screen and ($desktop) {
+      width: 50%;
+    }
+  }
+  &-single {
+    margin-top: 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    @media screen and ($tablet) {
+        margin-top: 5rem;
+    }
+    img {
+      position: absolute;
+      left: 2rem;
+      top: 0.4rem;
+    }
+    &:nth-child(2) img {
+      left: 1.4rem;
+      top: 0.7rem;
+    }
+    h3 {
+      @include webfont($raleway, 1rem, 800, black) {
+        margin-top: 1.5rem;
+        margin-bottom: 1.2rem;
+        letter-spacing: 0.2rem;
+      }
+    }
+    p {
+      @include webfont($raleway, 1rem, $basic-font-weight, $color-grey);
+    }
+  }
+  @for $i from 1 through list.length($colors-list) {
+    &-single:nth-child(#{$i}) .circle {
+      background-color: list.nth($colors-list, $i);
+    }
+  }
+  &-single .circle {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    position: relative;
+  }
+}

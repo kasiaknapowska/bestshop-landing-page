@@ -1,0 +1,35 @@
+.btn-blue {
+  @include btn(.8rem, $color-primary-blue, 1rem 3.5rem, 1.5rem) {
+    border: 1px solid $color-primary-blue;
+  }
+}
+.btn-redish {
+  @include btn(.8rem, $color-redish, 1rem 3.5rem, 1.5rem) {
+    border: 1px solid $color-redish;
+  }
+}
+.btn-green {
+  @include btn(.8rem, $color-green, 1rem 3.5rem, 1.5rem) {
+    border: 1px solid $color-green;
+  }
+}
+.call-to-action {
+  @include btn(1rem, $color-primary-blue, 1.5rem, 2.5rem) {
+    box-shadow: 5px 10px 14px $color-primary-blue-shadow;
+    width: 90%;
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+  @media screen and ($mobile) {
+    width: auto;
+    padding: 1.5rem 5rem;
+  }
+}
+[type="submit"] {
+  @include btn(.8rem, $color-primary-blue, 1.5rem 6rem, 2rem) {
+    border: 1px solid $color-primary-blue;
+    box-shadow: 5px 10px 14px $color-primary-blue-shadow;
+    position: absolute;
+    right: 0;
+  }
+}
